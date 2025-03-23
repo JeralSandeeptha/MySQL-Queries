@@ -238,5 +238,44 @@ SELECT VERSION;
 SELECT NOW;
 ```
 
+**User Defiened Functions**
+
+- ✔ Cannot modify database state (No INSERT, UPDATE, DELETE, or EXEC statements).
+- ✔ Deterministic (Same input always returns the same output).
+- ✔ Can be used in SELECT, WHERE, and JOIN clauses.
+
+Scalar Functions – Returns a single value.
+
+```cmd
+CREATE FUNCTION GetFullName(@FirstName VARCHAR(50), @LastName VARCHAR(50))
+RETURNS VARCHAR(100)
+AS
+BEGIN
+    RETURN @FirstName + ' ' + @LastName
+END;
+```
+
+```cmd
+SELECT dbo.GetFullName('John', 'Doe') AS FullName;
+```
+
+Table-Valued Functions – Returns a table.
+
+```cmd
+CREATE FUNCTION GetActiveUsers()
+RETURNS TABLE
+AS
+RETURN
+(
+    SELECT Id, Name, Email
+    FROM Users
+    WHERE IsActive = 1
+);
+```
+
+```cmd
+SELECT * FROM dbo.GetActiveUsers();
+```
+
 ## Joins
 
