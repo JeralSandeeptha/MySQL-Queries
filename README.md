@@ -80,12 +80,12 @@ DROP DATABASE Bootcamp;
 ## With Tables
 
 - Get all tables
-``cmd
+``sql
 SHOW TABLES;
 ```
 
 - Create a table
-```cmd
+```sql
 CREATE TABLE student (
 name VARCHAR(45) 
 age INT
@@ -93,7 +93,7 @@ age INT
 ```
 
 - Create a table if not exist
-```cmd
+```sql
 CREATE TABLE IF NOT EXIST student (
 name VARCHAR(45) 
 age INT
@@ -101,7 +101,7 @@ age INT
 ```
 
 - Get a description about a table
-```cmd
+```sql
 DESCRIBE student;
 DESC student;
 ```
@@ -123,7 +123,7 @@ Constraints can be column level or table level. Column level constraints apply t
 ## CRUD Operations
 
 - Create Records
-```cmd
+```sql
 INSERT INTO student ( name, age) VALUES ( ‘Nimal’, ‘17’ );
 
 INSERT INTO student VALUES ( ‘Bandara’, ‘17 );
@@ -138,7 +138,7 @@ Nic VARCHAR(15) PRIMARY KEY
 ```
 
 - Read Records
-```cmd
+```sql
 SELECT name FROM student;
 
 SELECT name, age FROM student;  //select by specific columns
@@ -177,14 +177,14 @@ SELECT age+3 AS `after three years` FROM student;
 ```
 
 - Update Records
-```cmd
+```sql
 UPDATE student SET name=’Kamal’;      //don’t do like this
 
 UPDATE student SET name=’Kamal’ WHERE nic=’200015003010’; 
 ```
 
 - Delete Records
-```cmd
+```sql
 DELETE FROM student;     		   //don’t do like this
 
 DELETE student SET name=’Kamal’ WHERE nic=’200015003010’;
@@ -196,7 +196,7 @@ A relationship in SQL defines how tables connect based on keys (Primary Key and 
 
 1. One-to-One (1:1) - Each row in Table A is related to one row in Table B.
 
-```cmd
+```sql
 CREATE TABLE Users (
     UserID INT PRIMARY KEY,
     UserName VARCHAR(100) NOT NULL
@@ -215,7 +215,7 @@ CREATE TABLE Profiles (
 
 2. One-to-Many (1:M) – Each row in Table A can be related to multiple rows in Table B, but each row in Table B is related to only one row in Table A.
 
-```cmd
+```sql
 CREATE TABLE Customers (
     CustomerID INT PRIMARY KEY,
     Name VARCHAR(100) NOT NULL
@@ -234,7 +234,7 @@ CREATE TABLE Orders (
 
 3. Many-to-Many (M:M) – Multiple rows in Table A relate to multiple rows in Table B using a junction table.
 
-```cmd
+```sql
 CREATE TABLE Students (
     StudentID INT PRIMARY KEY,
     StudentName VARCHAR(100) NOT NULL
@@ -268,39 +268,39 @@ In SQL Functions we have 2 types of functions
 **Predefined Functions**
 
 - `AVG()` - Get Average Value
-```cmd
+```sql
 SELECT AVG(salary) FROM student;  
 ```
 
 - `SUM()` - Get all the additions of data
-```cmd
+```sql
 SELECT SUM(salary) FROM student;    
 ```
 
 - `MAX()` - Get max value
-```cmd
+```sql
 SELECT MAX(salary) FROM student; 
 ```
 
 - `MIN()` - Get min value
-```cmd
+```sql
 SELECT MIN(salary) FROM student; 
 ```
 
 - `COUNT()` - To get unique data / without repeat data
-```cmd
+```sql
 SELECT COUNT(id) FROM student;
 
 SELECT COUNT(DISTINCT city) FROM student; 
 ```
 
 - `VERSION()` - Give version
-```cmd
+```sql
 SELECT VERSION;
 ```
 
 - `NOW()` - Give today date
-```cmd
+```sql
 SELECT NOW;
 ```
 
@@ -312,7 +312,7 @@ SELECT NOW;
 
 Scalar Functions – Returns a single value.
 
-```cmd
+```sql
 CREATE FUNCTION GetFullName(@FirstName VARCHAR(50), @LastName VARCHAR(50))
 RETURNS VARCHAR(100)
 AS
@@ -321,13 +321,13 @@ BEGIN
 END;
 ```
 
-```cmd
+```sql
 SELECT dbo.GetFullName('John', 'Doe') AS FullName;
 ```
 
 Table-Valued Functions – Returns a table.
 
-```cmd
+```sql
 CREATE FUNCTION GetActiveUsers()
 RETURNS TABLE
 AS
@@ -339,7 +339,7 @@ RETURN
 );
 ```
 
-```cmd
+```sql
 SELECT * FROM dbo.GetActiveUsers();
 ```
 
@@ -348,7 +348,7 @@ SELECT * FROM dbo.GetActiveUsers();
 1. INNER JOIN – Returns only matching rows from both tables.
 
 - Returns only the matching rows from both tables based on a common column.
-```cmd
+```sql
 SELECT Customers.CustomerID, Customers.Name, Orders.OrderID, Orders.Product
 FROM Customers
 INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
@@ -357,7 +357,7 @@ INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
 2. LEFT JOIN (LEFT OUTER JOIN) – Returns all rows from the left table and matching rows from the right table. If no match, NULLs are returned.
 
 - Returns all rows from the left table and matching rows from the right table. If no match is found, NULLs are returned for right table columns.
-```cmd
+```sql
 SELECT Customers.CustomerID, Customers.Name, Orders.OrderID, Orders.Product
 FROM Customers
 LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
@@ -366,7 +366,7 @@ LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
 3. RIGHT JOIN (RIGHT OUTER JOIN) – Returns all rows from the right table and matching rows from the left table. If no match, NULLs are returned.
 
 - Returns all rows from the right table and matching rows from the left table. If no match is found, NULLs are returned for left table columns.
-```cmd
+```sql
 SELECT Customers.CustomerID, Customers.Name, Orders.OrderID, Orders.Product
 FROM Customers
 RIGHT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
@@ -375,7 +375,7 @@ RIGHT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
 4. FULL JOIN (FULL OUTER JOIN) – Returns all rows from both tables. If there’s no match, NULLs are returned in columns from the missing table.
 
 - Returns all rows from both tables, with NULLs where there is no match.
-```cmd
+```sql
 SELECT Customers.CustomerID, Customers.Name, Orders.OrderID, Orders.Product
 FROM Customers
 FULL JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
