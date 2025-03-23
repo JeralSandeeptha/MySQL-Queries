@@ -192,6 +192,68 @@ DELETE student SET name=’Kamal’ WHERE nic=’200015003010’;
 
 ## Relationships
 
+A relationship in SQL defines how tables connect based on keys (Primary Key and Foreign Key). Relationships help maintain data integrity and prevent duplication.
+
+1. One-to-One (1:1) - Each row in Table A is related to one row in Table B.
+
+```cmd
+CREATE TABLE Users (
+    UserID INT PRIMARY KEY,
+    UserName VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Profiles (
+    ProfileID INT PRIMARY KEY,
+    UserID INT UNIQUE,  -- Ensures one-to-one relationship
+    Bio TEXT,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID) ON DELETE CASCADE
+);
+```
+
+- ✔ The `UserID` in `Profiles` is unique, ensuring only one profile per user.
+- ✔ `ON DELETE CASCADE` ensures that if a user is deleted, their profile is also deleted.
+
+2. One-to-Many (1:M) – Each row in Table A can be related to multiple rows in Table B, but each row in Table B is related to only one row in Table A.
+
+```cmd
+CREATE TABLE Customers (
+    CustomerID INT PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    CustomerID INT,
+    OrderDate DATE NOT NULL,
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID) ON DELETE CASCADE
+);
+```
+
+- ✔ The `CustomerID` in `Orders` is a Foreign Key, linking it to Customers.
+- ✔ One customer can have multiple orders, but each order belongs to only one customer.
+
+3. Many-to-Many (M:M) – Multiple rows in Table A relate to multiple rows in Table B using a junction table.
+
+```cmd
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY,
+    StudentName VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Courses (
+    CourseID INT PRIMARY KEY,
+    CourseName VARCHAR(100) NOT NULL
+);
+
+-- Junction Table (Bridges Many-to-Many Relationship)
+CREATE TABLE StudentCourses (
+    StudentID INT,
+    CourseID INT,
+    PRIMARY KEY (StudentID, CourseID),
+    FOREIGN KEY (StudentID) REFERENCES Students(StudentID) ON DELETE CASCADE,
+    FOREIGN KEY (CourseID) REFERENCES Courses(CourseID) ON DELETE CASCADE
+);
+```
 
 ## Functions
 
