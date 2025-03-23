@@ -255,6 +255,10 @@ CREATE TABLE StudentCourses (
 );
 ```
 
+- ✔ `StudentCourses` bridges the relationship between `Students` and `Courses`.
+- ✔ It uses a composite primary key (`StudentID`, `CourseID`).
+- ✔ A student can enroll in multiple courses, and a course can have multiple students.
+
 ## Functions
 
 In SQL Functions we have 2 types of functions
