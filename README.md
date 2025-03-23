@@ -210,8 +210,8 @@ CREATE TABLE Profiles (
 );
 ```
 
-- ✔ The `UserID` in `Profiles` is unique, ensuring only one profile per user.
-- ✔ `ON DELETE CASCADE` ensures that if a user is deleted, their profile is also deleted.
+✔ The `UserID` in `Profiles` is unique, ensuring only one profile per user.
+✔ `ON DELETE CASCADE` ensures that if a user is deleted, their profile is also deleted.
 
 2. One-to-Many (1:M) – Each row in Table A can be related to multiple rows in Table B, but each row in Table B is related to only one row in Table A.
 
@@ -229,8 +229,8 @@ CREATE TABLE Orders (
 );
 ```
 
-- ✔ The `CustomerID` in `Orders` is a Foreign Key, linking it to Customers.
-- ✔ One customer can have multiple orders, but each order belongs to only one customer.
+✔ The `CustomerID` in `Orders` is a Foreign Key, linking it to Customers.
+✔ One customer can have multiple orders, but each order belongs to only one customer.
 
 3. Many-to-Many (M:M) – Multiple rows in Table A relate to multiple rows in Table B using a junction table.
 
@@ -255,9 +255,9 @@ CREATE TABLE StudentCourses (
 );
 ```
 
-- ✔ `StudentCourses` bridges the relationship between `Students` and `Courses`.
-- ✔ It uses a composite primary key (`StudentID`, `CourseID`).
-- ✔ A student can enroll in multiple courses, and a course can have multiple students.
+✔ `StudentCourses` bridges the relationship between `Students` and `Courses`.
+✔ It uses a composite primary key (`StudentID`, `CourseID`).
+✔ A student can enroll in multiple courses, and a course can have multiple students.
 
 ## Functions
 
@@ -306,9 +306,9 @@ SELECT NOW;
 
 **User Defiened Functions**
 
-- ✔ Cannot modify database state (No INSERT, UPDATE, DELETE, or EXEC statements).
-- ✔ Deterministic (Same input always returns the same output).
-- ✔ Can be used in SELECT, WHERE, and JOIN clauses.
+✔ Cannot modify database state (No INSERT, UPDATE, DELETE, or EXEC statements).
+✔ Deterministic (Same input always returns the same output).
+✔ Can be used in SELECT, WHERE, and JOIN clauses.
 
 Scalar Functions – Returns a single value.
 
