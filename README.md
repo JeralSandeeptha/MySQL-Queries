@@ -53,27 +53,27 @@ Date and Time Data Types
 ## With Databases
 
 - Create Database
-```cmd
+```sql
 CREATE DATABASE Bootcamp;
 ```
 
 - Create a Database if not exist
-```cmd
+```sql
 CREATE DATABASE IF NOT EXIST Bootcamp;
 ```
 
 - Get all Databases
-```cmd
+```sql
 SHOW DATABASES;
 ```
 
 -  Select a Database
-```cmd
+```sql
 USE Bootcamp;
 ```
 
 -  Drop a Database
-```cmd
+```sql
 DROP DATABASE Bootcamp;
 ```
 
