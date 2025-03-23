@@ -68,7 +68,32 @@ DROP DATABASE Bootcamp;
 
 ## With Tables
 
-- 
+- Get all tables
+``cmd
+SHOW TABLES;
+```
+
+- Create a table
+```cmd
+CREATE TABLE student (
+name VARCHAR(45) 
+age INT
+);
+```
+
+- Create a table if not exist
+```cmd
+CREATE TABLE IF NOT EXIST student (
+name VARCHAR(45) 
+age INT
+);
+```
+
+- Get a description about a table
+```cmd
+DESCRIBE student;
+DESC student;
+```
 
 ## Table Constraints
 
