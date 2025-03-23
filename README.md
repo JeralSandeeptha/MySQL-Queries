@@ -24,19 +24,26 @@
 
 String Data Types
 
-Numeric Data Types
+- `CHAR` - 	A FIXED length string (can contain letters, numbers, and special characters). The size parameter specifies the column length in characters - can be from 0 to 255. Default is 1
+- `VARCHAR` - A VARIABLE length string (can contain letters, numbers, and special characters). The size parameter specifies the maximum column length in characters - can be from 0 to 65535
+- `TEXT` - Holds a string with a maximum length of 65,535 bytes
+- `BLOB` - For BLOBs (Binary Large OBjects). Holds up to 65,535 bytes of data
+- `LONGTEXT` - Holds a string with a maximum length of 4,294,967,295 characters
+- `LONGBLOB` - For BLOBs (Binary Large OBjects). Holds up to 4,294,967,295 bytes of data
 
-- `` - 
-- `` - 
-- `` - 
-- `` - 
+Numeric Data Types
+- `TINYINT` - A very small integer. Signed range: `-128 to 127`. Unsigned range: `0 to 255`. The `size` parameter specifies the maximum display width (up to 255).
+- `INT` - A medium integer. Signed range: `-2,147,483,648` to `2,147,483,647`. Unsigned range: `0 to 4,294,967,295`. The `size` parameter specifies the maximum display width (up to 255).
+- `FLOAT` - A floating point number. The total number of digits is specified in size. The number of digits after the decimal point is specified in d. Deprecated in MySQL 8.0.17 and will be removed in future versions.
+- `DOUBLE` - A normal-size floating point number. The total number of digits is specified in size, and the number of digits after the decimal point is specified in d.
+- `BOOLEAN` - Zero is considered `false`, nonzero values are considered `true`.
 
 Date and Time Data Types
 
 - `DATE` - 	A Date / YYYY-MM-DD / The supported range is from '1000-01-01' to '9999-12-31'
-- `DATETIME(fsp)` - A Date and Time combination. / YYYY-MM-DD hh:mm:ss / The supported range is from '1000-01-01 00:00:00' to '9999-12-31 23:59:59' / 
-- `TIMESTAMP(fsp)` - A Timestamp / YYYY-MM-DD hh:mm:ss / The supported range is from '1970-01-01 00:00:01' UTC to '2038-01-09 03:14:07' UTC
-- `TIME(fsp)` - A Time. / hh:mm:ss / The supported range is from '-838:59:59' to '838:59:59'
+- `DATETIME` - A Date and Time combination. / YYYY-MM-DD hh:mm:ss / The supported range is from '1000-01-01 00:00:00' to '9999-12-31 23:59:59' / 
+- `TIMESTAMP` - A Timestamp / YYYY-MM-DD hh:mm:ss / The supported range is from '1970-01-01 00:00:01' UTC to '2038-01-09 03:14:07' UTC
+- `TIME` - A Time. / hh:mm:ss / The supported range is from '-838:59:59' to '838:59:59'
 - `YEAR` - Year in four-digit format / 1901 to 2155, and 0000.
 
 ## With Databases
