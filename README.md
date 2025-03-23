@@ -8,6 +8,9 @@
 - [With Tables](#with-tables)
 - [Table Constraints](#table-constraints)
 - [CRUD Operations](#crud-operations)
+- [Relationships](#relationships)
+- [Functions](#Functions)
+- [Joins](#Joins)
 
 ## Basic Keywords
 
@@ -186,3 +189,54 @@ DELETE FROM student;     		   //don’t do like this
 
 DELETE student SET name=’Kamal’ WHERE nic=’200015003010’;
 ```
+
+## Relationships
+
+
+## Functions
+
+In SQL Functions we have 2 types of functions
+- Predefined Functions
+- User defined Functions
+
+**Predefined Functions**
+
+- `AVG()` -Get Average Value
+```cmd
+SELECT AVG(salary) FROM student;  
+```
+
+- `SUM()` Get all the additions of data
+```cmd
+SELECT SUM(salary) FROM student;    
+```
+
+- `MAX()` Get max value
+```cmd
+SELECT MAX(salary) FROM student; 
+```
+
+- `MIN()` Get min value
+```cmd
+SELECT MIN(salary) FROM student; 
+```
+
+- `COUNT()` - To get unique data / without repeat data
+```cmd
+SELECT COUNT(id) FROM student;
+
+SELECT COUNT(DISTINCT city) FROM student; 
+```
+
+- `VERSION()` - Give version
+```cmd
+SELECT VERSION
+```
+
+- `NOW()` - Give today date
+```cmd
+SELECT NOW;
+```
+
+## Joins
+
