@@ -7,6 +7,7 @@
 - [With Databases](#with-databases)
 - [With Tables](#with-tables)
 - [Table Constraints](#table-constraints)
+- [CRUD Operations](#crud-operations)
 
 ## Basic Keywords
 
@@ -115,3 +116,73 @@ Constraints can be column level or table level. Column level constraints apply t
 - `CHECK` - Ensures that the values in a column satisfies a specific condition
 - `DEFAULT` - Sets a default value for a column if no value is specified
 - `CREATE INDEX` - Used to create and retrieve data from the database very quickly
+
+## CRUD Operations
+
+- Create Records
+```cmd
+INSERT INTO student ( name, age) VALUES ( ‘Nimal’, ‘17’ );
+
+INSERT INTO student VALUES ( ‘Bandara’, ‘17 );
+
+INSERT INTO student VALUES ( ‘Bandara’, ‘17 ), ( Saman, ‘12’ ), ( Jeral, ‘22’ );
+
+CREATE TABLE IF NOT EXIST student (
+name VARCHAR(45),
+age INT,
+Nic VARCHAR(15) PRIMARY KEY
+);
+```
+
+- Read Records
+```cmd
+SELECT name FROM student;
+
+SELECT name, age FROM student;  //select by specific columns
+
+SELECT * FROM student;      //select all columns
+
+SELECT * FROM student LIMIT 2;                        //Limit
+
+SELECT * FROM student ORDER BY age DESC;          //Descending Order
+
+SELECT * FROM student ORDER BY age ASC;            //Ascending Order
+
+SELECT * FROM student ORDER BY name ASC, age DESC;    //select by order
+//first try to name, if can’t then use age
+
+SELECT * FROM student WHERE name=’Kamal’;  //select by specific column
+
+SELECT * FROM student WHERE name LIKE ‘%l’;       //LIKE(search)
+
+SELECT * FROM student WHERE BETWEEN age>= 18 AND 30;    //BETWEEN
+
+SELECT * FROM student WHERE id IN (1,2,3,4,5);           //IN
+
+SELECT * FROM student WHERE name=’Kamal’ AND age=’12’;
+//select by specific two logics
+
+SELECT * FROM student WHERE name=’Kamal’ OR age=’12’;
+//select by specific two logics
+
+SELECT name AS student_name FROM student; 		//Alias
+
+SELECT age AS `student age` FROM student; 		//Alias
+
+SELECT age+3 AS `after three years` FROM student;
+//get records and modify it
+```
+
+- Update Records
+```cmd
+UPDATE student SET name=’Kamal’;      //don’t do like this
+
+UPDATE student SET name=’Kamal’ WHERE nic=’200015003010’; 
+```
+
+- Delete Records
+```cmd
+DELETE FROM student;     		   //don’t do like this
+
+DELETE student SET name=’Kamal’ WHERE nic=’200015003010’;
+```
