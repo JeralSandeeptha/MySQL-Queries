@@ -345,3 +345,38 @@ SELECT * FROM dbo.GetActiveUsers();
 
 ## Joins
 
+1. INNER JOIN – Returns only matching rows from both tables.
+
+- Returns only the matching rows from both tables based on a common column.
+```cmd
+SELECT Customers.CustomerID, Customers.Name, Orders.OrderID, Orders.Product
+FROM Customers
+INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+```
+
+2. LEFT JOIN (LEFT OUTER JOIN) – Returns all rows from the left table and matching rows from the right table. If no match, NULLs are returned.
+
+- Returns all rows from the left table and matching rows from the right table. If no match is found, NULLs are returned for right table columns.
+```cmd
+SELECT Customers.CustomerID, Customers.Name, Orders.OrderID, Orders.Product
+FROM Customers
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+```
+
+3. RIGHT JOIN (RIGHT OUTER JOIN) – Returns all rows from the right table and matching rows from the left table. If no match, NULLs are returned.
+
+- Returns all rows from the right table and matching rows from the left table. If no match is found, NULLs are returned for left table columns.
+```cmd
+SELECT Customers.CustomerID, Customers.Name, Orders.OrderID, Orders.Product
+FROM Customers
+RIGHT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+```
+
+4. FULL JOIN (FULL OUTER JOIN) – Returns all rows from both tables. If there’s no match, NULLs are returned in columns from the missing table.
+
+- Returns all rows from both tables, with NULLs where there is no match.
+```cmd
+SELECT Customers.CustomerID, Customers.Name, Orders.OrderID, Orders.Product
+FROM Customers
+FULL JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+```
