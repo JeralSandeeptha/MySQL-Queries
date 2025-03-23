@@ -201,22 +201,22 @@ In SQL Functions we have 2 types of functions
 
 **Predefined Functions**
 
-- `AVG()` -Get Average Value
+- `AVG()` - Get Average Value
 ```cmd
 SELECT AVG(salary) FROM student;  
 ```
 
-- `SUM()` Get all the additions of data
+- `SUM()` - Get all the additions of data
 ```cmd
 SELECT SUM(salary) FROM student;    
 ```
 
-- `MAX()` Get max value
+- `MAX()` - Get max value
 ```cmd
 SELECT MAX(salary) FROM student; 
 ```
 
-- `MIN()` Get min value
+- `MIN()` - Get min value
 ```cmd
 SELECT MIN(salary) FROM student; 
 ```
