@@ -230,7 +230,7 @@ SELECT COUNT(DISTINCT city) FROM student;
 
 - `VERSION()` - Give version
 ```cmd
-SELECT VERSION
+SELECT VERSION;
 ```
 
 - `NOW()` - Give today date
