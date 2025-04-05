@@ -10,7 +10,7 @@
 - [CRUD Operations](#crud-operations)
 - [Relationships](#relationships)
 - [Functions](#Functions)
-- [Joins](#Joins)
+- [Joins](#Joins) 
 
 ## Basic Keywords
 
